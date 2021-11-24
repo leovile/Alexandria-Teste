@@ -21,11 +21,6 @@ const GlobalStyles = createGlobalStyle`
 
   a {
     cursor: pointer;
-    z-index: 5;
-  }
-
-  li {
-    z-index: 5;
   }
 
   button {
@@ -33,11 +28,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-    --dark-gray: #262425;
-    --light-gray: #8B9196;
-    --blue: #1c538e;
-    --green: #8CBF4F;
-    --white: #FFFFFF;
+
   }
 `;
 
