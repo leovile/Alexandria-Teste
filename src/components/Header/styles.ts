@@ -22,6 +22,8 @@ export const LogoWrapper = styled.div`
 
   width: 30rem;
   height: 100%;
+
+  cursor: pointer;
 `;
 
 export const Logo = styled(Image)``;
@@ -53,7 +55,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Title = styled.h1`
-  font-size: 3rem;
   text-align: center;
 `;
 

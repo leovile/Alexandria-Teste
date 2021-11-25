@@ -28,7 +28,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   :root {
-
+    --blue: #2C3787;
   }
 `;
 
