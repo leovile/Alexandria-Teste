@@ -35,7 +35,6 @@ const Challenge01: React.FC = () => {
       );
 
       const { data } = response;
-      console.log(data);
 
       setInfo(data);
     } catch (error) {
