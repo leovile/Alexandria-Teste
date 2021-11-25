@@ -1,5 +1,5 @@
 export interface DataProps {
-  data: [] | undefined;
+  data: Array<any>;
   statusA: number;
   statusB: number;
   statusC: number;

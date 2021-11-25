@@ -19,10 +19,11 @@ import Modal from '@material-ui/core/Modal';
 
 const Challenge1: React.FC = () => {
   const [info, setInfo] = useState<T.DataProps>();
+  const [page, setPage] = useState(0);
   const [open, setOpen] = useState(false);
+
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const [page, setPage] = useState(0);
 
   const getData = async () => {
     try {
@@ -51,28 +52,55 @@ const Challenge1: React.FC = () => {
       <S.ShowCards onClick={handleOpen}>Acessar Informações</S.ShowCards>
       <Modal open={open} onClose={handleClose}>
         <Box sx={S.style}>
+          <S.Clp>CLP {page + 1}</S.Clp>
           {info?.data?.map(
             (item: T.DataProps, index) =>
               page === index && (
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                // @ts-ignore
                 <S.Cards key={uniqid()} index={index}>
-                  <S.TemperatureA>{Object.keys(item)[0]}</S.TemperatureA>
-                  <S.TemperatureB>{item.temperatureA}</S.TemperatureB>
+                  <S.TemperatureA>
+                    <S.Title>{Object.keys(item)[0]}</S.Title>
+                    <S.Info>{item.temperatureA} °C</S.Info>
+                  </S.TemperatureA>
+
+                  <S.TemperatureB>
+                    <S.Title>{Object.keys(item)[1]}</S.Title>
+                    <S.Info>{item.temperatureB} °C</S.Info>
+                  </S.TemperatureB>
+
                   <S.StatusA>
+                    <S.Title>{Object.keys(item)[2]}</S.Title>
                     {item.statusA === 1 ? <FcCheckmark /> : <FcHighPriority />}
                   </S.StatusA>
+
                   <S.StatusB>
+                    <S.Title>{Object.keys(item)[3]}</S.Title>
+
                     {item.statusB === 1 ? <FcCheckmark /> : <FcHighPriority />}
                   </S.StatusB>
+
                   <S.StatusC>
+                    <S.Title>{Object.keys(item)[4]}</S.Title>
+
                     {item.statusC === 1 ? <FcCheckmark /> : <FcHighPriority />}
                   </S.StatusC>
+
                   <S.StatusD>
+                    <S.Title>{Object.keys(item)[5]}</S.Title>
+
                     {item.statusD === 1 ? <FcCheckmark /> : <FcHighPriority />}
                   </S.StatusD>
+
                   <S.StatusE>
+                    <S.Title>{Object.keys(item)[6]}</S.Title>
+
                     {item.statusE === 1 ? <FcCheckmark /> : <FcHighPriority />}
                   </S.StatusE>
+
                   <S.StatusF>
+                    <S.Title>{Object.keys(item)[7]}</S.Title>
+
                     {item.statusF === 1 ? <FcCheckmark /> : <FcHighPriority />}
                   </S.StatusF>
                 </S.Cards>
@@ -90,6 +118,8 @@ const Challenge1: React.FC = () => {
             </S.Button>
             <S.Button
               onClick={
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                //@ts-ignore
                 page < info?.data?.length - 1
                   ? () => setPage((prev) => prev + 1)
                   : () => setPage((prev) => prev + 0)
