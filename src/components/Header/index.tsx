@@ -1,5 +1,7 @@
 import * as S from './styles';
 
+import { isBrowser } from 'react-device-detect';
+
 import Link from 'next/link';
 
 import logo from '../../../public/img/alexandria.png';
@@ -13,7 +15,7 @@ const Header: React.FC = () => {
         </S.LogoWrapper>
       </Link>
 
-      <S.Name>Desenvolvido por: Leonardo Vilela</S.Name>
+      {isBrowser && <S.Name>Desenvolvido por: Leonardo Vilela</S.Name>}
     </S.Header>
   );
 };

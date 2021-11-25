@@ -15,6 +15,10 @@ export const Header = styled.div`
   background-color: var(--blue);
 
   padding: 0 20rem;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 5rem;
+  }
 `;
 
 export const LogoWrapper = styled.div`
@@ -32,6 +36,10 @@ export const Name = styled.p`
   font-size: 2rem;
   font-weight: 500;
   color: white;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`

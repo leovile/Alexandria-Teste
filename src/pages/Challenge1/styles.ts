@@ -17,6 +17,10 @@ export const Cards = styled.div`
   height: 100%;
 
   color: black;
+
+  @media screen and (max-width: 430px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export const ShowCards = styled.button`
@@ -45,6 +49,11 @@ export const ShowCards = styled.button`
   -webkit-box-shadow: 5px 5px 15px 0px rgba(105, 105, 105, 0.9);
   -moz-box-shadow: 5px 5px 15px 0px rgba(105, 105, 105, 0.9);
   box-shadow: 5px 5px 15px 0px rgba(105, 105, 105, 0.9);
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    width: 80%;
+  }
 `;
 
 export const style = {
@@ -53,11 +62,11 @@ export const style = {
   top: '50%',
   transform: 'translate(-50%, -50%)',
   width: '80%',
-  height: '70%',
+  height: '90%',
   bgcolor: 'background.paper',
   border: '2px solid #000',
   boxShadow: 24,
-  p: 4,
+  p: 2,
   display: 'flex' as const,
   flexDirection: 'column' as const,
   justifyContent: 'center' as const
@@ -72,22 +81,54 @@ export const TemperatureA = styled.div`
 
   text-align: center;
 
-  font-size: 2rem;
-
   border-radius: 1rem;
 
   background-color: lightgray;
 
-  height: 20rem;
-  width: 20rem;
+  height: 30rem;
+  width: 30rem;
 
   margin: auto;
+
+  @media screen and (max-width: 1440px) {
+    height: 25rem;
+    width: 25rem;
+  }
+
+  @media screen and (max-width: 1366px) {
+    height: 18rem;
+    width: 18rem;
+  }
+
+  @media screen and (max-width: 430px) {
+    height: 12rem;
+    width: 12rem;
+  }
+
+  @media screen and (max-width: 330px) {
+    height: 8rem;
+    width: 8rem;
+
+    gap: 2rem;
+  }
 `;
 export const TemperatureB = styled(TemperatureA)``;
 
 export const StatusA = styled(TemperatureA)`
-  font-size: 5rem;
+  font-size: 10rem;
   gap: 3rem;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 8rem;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 330px) {
+    font-size: 2rem;
+  }
 `;
 export const StatusB = styled(StatusA)``;
 export const StatusC = styled(StatusA)``;
@@ -161,13 +202,33 @@ export const BackButton = styled.button`
 `;
 
 export const Title = styled.p`
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 700;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 2rem;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (max-width: 330px) {
+    font-size: 1rem;
+  }
 `;
 
 export const Info = styled.p`
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 500;
+
+  @media screen and (max-width: 1366px) {
+    font-size: 4rem;
+  }
+
+  @media screen and (max-width: 430px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Status = styled.div`
@@ -179,4 +240,33 @@ export const Clp = styled.p`
 
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (max-width: 430px) {
+    font-size: 2rem;
+  }
+`;
+
+export const CloseButton = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+  border: none;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  width: 5rem;
+  height: 5rem;
+
+  svg {
+    font-size: 5rem;
+  }
+
+  @media screen and (max-width: 430px) {
+    width: 4rem;
+    height: 4rem;
+  }
 `;

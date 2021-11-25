@@ -4,19 +4,6 @@ import Image from 'next/image';
 
 export const Container = styled.div``;
 
-export const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  width: 100%;
-  height: 10rem;
-
-  background-color: var(--blue);
-
-  padding: 0 20rem;
-`;
-
 export const LogoWrapper = styled.div`
   position: relative;
 
@@ -41,6 +28,11 @@ export const ButtonsWrapper = styled.div`
   height: calc(100vh - 10rem);
 
   padding: 0 20rem;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: 0;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -83,6 +75,17 @@ export const Challenge1 = styled.button`
   -webkit-box-shadow: 5px 5px 15px 0px rgba(105, 105, 105, 0.9);
   -moz-box-shadow: 5px 5px 15px 0px rgba(105, 105, 105, 0.9);
   box-shadow: 5px 5px 15px 0px rgba(105, 105, 105, 0.9);
+
+  @media screen and (max-width: 1024px) {
+    width: 20rem;
+    height: 20rem;
+    font-size: 5rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    width: 15rem;
+    height: 15rem;
+  }
 `;
 
 export const Challenge2 = styled(Challenge1)``;

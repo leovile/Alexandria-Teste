@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 
+import { isMobile } from 'react-device-detect';
+
 import Link from 'next/link';
 
 import uniqid from 'uniqid';
@@ -13,6 +15,7 @@ import * as T from './types';
 import { AxiosResponse } from 'axios';
 
 import { FcCheckmark, FcHighPriority } from 'react-icons/fc';
+import { AiFillCloseSquare } from 'react-icons/ai';
 
 import Box from '@material-ui/core/Box';
 import Modal from '@material-ui/core/Modal';
@@ -52,6 +55,9 @@ const Challenge1: React.FC = () => {
       <S.ShowCards onClick={handleOpen}>Acessar Informações</S.ShowCards>
       <Modal open={open} onClose={handleClose}>
         <Box sx={S.style}>
+          <S.CloseButton onClick={handleClose}>
+            <AiFillCloseSquare />
+          </S.CloseButton>
           <S.Clp>CLP {page + 1}</S.Clp>
           {info?.data?.map(
             (item: T.DataProps, index) =>
