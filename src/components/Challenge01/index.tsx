@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import { isMobile } from 'react-device-detect';
-
 import Link from 'next/link';
 
 import uniqid from 'uniqid';
